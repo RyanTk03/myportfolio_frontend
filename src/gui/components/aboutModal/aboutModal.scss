@@ -1,0 +1,81 @@
+.about-modal {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &__overlay {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.3);
+
+        &__content {
+            width: 85%;
+            height: 85%;
+
+            border: 6px solid var(--primary-color);
+            border-radius: 10px;
+
+            background-color: whitesmoke;
+
+            text-align: center;
+
+            &__header {
+                border-radius: 10px 10px 0 0;
+                box-shadow: 0 4px 5px 0px rgba(0, 0, 0, 0.1);
+                padding: 0.5rem;
+
+                h3 {
+                    font-size: 1.2rem;
+                    color: #3a71ca;
+                    text-align: center;
+                }
+            }
+            &__body {
+                display: flex;
+                height: 80%;
+
+                margin: 0px 10px 10px 10px;
+
+                div:nth-child(1) {
+                    flex: 1;
+                    overflow: auto;
+                    word-wrap: wrap;
+                }
+                div:nth-child(2) {
+                    flex: 0.90;
+
+                    img {
+                        object-fit: cover;
+                    }
+
+                    @media screen and (max-width: 750px) {
+                        display: none;
+                    }
+                }
+            }
+            &__footer {
+                a {
+                    display: inline-block;
+                    border: none;
+                    padding: 0.6rem;
+                    background-color: var(--secondary-color);
+                    color: white;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transform: scale(1);
+                    transition: transform 0.15s ease-in;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}

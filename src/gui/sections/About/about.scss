@@ -1,0 +1,17 @@
+.app__about {
+    position: relative;
+    width: 100%;
+    gap: 2rem;
+
+    &__headline {
+        color: var(--secondary-color);
+    }
+
+    &__profil-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2.5rem;
+        align-content: center;
+    }
+}
