@@ -101,7 +101,6 @@ const Hero = () => {
                     }
                 </motion.div>
             </div>
-
         </section>
     );
 }

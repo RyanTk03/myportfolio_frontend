@@ -33,7 +33,7 @@ const Testimonials = () => {
 			{testimonials.length > 0 && (
 			<div className="app__testimonial">
 				<div className="app__testimonial-item app__flex">
-					<img src={getImgUrlFrom(testimonials[currentIndex].imageUrl)} alt={testimonials[currentIndex].name} />
+					<img src={getImgUrlFrom(testimonials[currentIndex]?.imageUrl) || '/person-fill.svg'} alt={testimonials[currentIndex].name} />
 					<div className="app__testimonial-content">
 						<p className="p-text">{testimonials[currentIndex].feedback}</p>
 						<div>

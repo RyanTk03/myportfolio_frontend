@@ -49,7 +49,7 @@ const AboutModal = ({ content, handleDisplay } = defaultProps) => {
                     <h3 className="bold-text">{content.title}</h3>
                 </div>
                 <div className="about-modal__overlay__content__body">
-                    <div style={{flex: 1}}>
+                    <div style={{flex: 1, padding: "8px 16px", fontSize: "1.2rem", wordSpacing: "0.2rem", lineHeight: "1.5rem"}}>
                         <Markdown>{md}</Markdown>
                     </div>
                     <div style={{flex: 0.8}}><img style={{width: "100%",height: "100%"}} src={content.image} alt="about" /></div>
