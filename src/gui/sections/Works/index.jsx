@@ -111,6 +111,11 @@ const Works = () => {
                 </div>
                 ))}
             </motion.div>
+            {works.length === 0 && 
+                <div style={{flex: 1}} className="app__flex">
+                    <p className="bold-text">Comming soon 😉</p>
+                </div>
+            }
         </section>
     );
 };
