@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { client, getImgUrlFrom } from '../../../client';
 import './skills.scss';
@@ -59,6 +59,7 @@ const Skills = () => {
                     }
                 </motion.div>
                 <motion.div
+                    className="learning-items"
                     whileInView={{
                         x: [100, 0],
                         transition: {
@@ -81,7 +82,7 @@ const Skills = () => {
                                         href={learning.proofLink}
                                         target="_blank" rel="noreferrer"
                                     >
-                                        see proof <sup>{linkIcon}</sup>
+                                        link {linkIcon}
                                     </a>
                                 </div>
                             </div>

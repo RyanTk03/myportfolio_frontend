@@ -5,6 +5,13 @@
         text-align: center;
     }
 
+    & .learning-items {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
     & > .app__flex {
         flex: 1;
         align-items: stretch;
