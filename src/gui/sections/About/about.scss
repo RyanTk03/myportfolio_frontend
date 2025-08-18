@@ -2,16 +2,40 @@
     position: relative;
     width: 100%;
     gap: 2rem;
-
+  
     &__headline {
-        color: var(--secondary-color);
+      color: var(--secondary-color);
+      text-align: center;
+      margin-bottom: 3rem;
     }
-
+  
     &__profil-cards {
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 2.5rem;
-        align-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2.5rem;
+  
+      /* Chaque card prend une largeur responsive */
+      > * {
+        flex: 1 1 200px;   // grow, shrink, basis
+        max-width: 220px;  // limite la taille max
+      }
+  
+      /* Sur mobile, full width */
+      @media screen and (max-width: 600px) {
+        gap: 1.5rem;
+        > * {
+          flex: 1 1 100%;   // prend toute la largeur dispo
+          max-width: 100%;
+        }
+      }
     }
-}
+  }
+  .app__about__profil-cards {
+    @media screen and (max-width: 600px) {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+    

@@ -47,16 +47,30 @@ const Skills = () => {
                     }}
                     className="app__flex"
                 >
-                    {
-                        skills.map((skill, index) => (
-                            <div className="skill-item app__flex" key={index}>
-                                <div className="app__circle">
-                                    <img src={getImgUrlFrom(skill.icon)} alt="skill icon" />
+                    <div className="app__skills-circle">
+                        {skills.map((skill, index) => {
+                            const angle = (360 / skills.length) * index;
+                            const radius = 200;
+
+                            const centerX = 200;
+                            const centerY = 200;
+                            const x = centerX + radius * Math.cos((angle * Math.PI) / 180);
+                            const y = centerY + radius * Math.sin((angle * Math.PI) / 180);
+
+                            return (
+                                <div
+                                    className="skill-item app__flex"
+                                    key={index}
+                                    style={{ transform: `translate(${x}px, ${y}px)` }}
+                                >
+                                    <div className="app__circle">
+                                        <img src={getImgUrlFrom(skill.icon)} alt="skill icon" />
+                                    </div>
+                                    <p className="p-text">{skill.name}</p>
                                 </div>
-                                <p className="p-text">{skill.name}</p>
-                            </div>
-                        ))
-                    }
+                            );
+                        })}
+                    </div>
                 </motion.div>
                 <motion.div
                     className="learning-items"

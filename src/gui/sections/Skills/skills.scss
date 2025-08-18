@@ -1,8 +1,40 @@
 .app__skills {
+    .app__skills-circle {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+    
+        .skill-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: center;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        .app__skills-circle {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    
+            .skill-item {
+                position: static;
+                transform: none !important;
+            }
+        }
+    }
+      
     background-color: var(--white-color);
 
     .head-text {
         text-align: center;
+        margin-bottom: 4rem;
     }
 
     & .learning-items {
@@ -26,6 +58,7 @@
         & > div:nth-child(1) {
             flex: 1.2;
             flex-wrap: wrap;
+            align-items: flex-start;
             border-right: 1px dashed var(--lightGray-color);
 
             .skill-item {

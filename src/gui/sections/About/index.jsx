@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './about.scss'
 import AboutCard from '../../components/aboutCard';
 import { getImgUrlFrom, client } from '../../../client';

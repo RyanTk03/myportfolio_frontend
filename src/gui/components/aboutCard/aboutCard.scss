@@ -1,17 +1,47 @@
 .about-card {
-    width: 200px;
+    width: 100%;              // prend toute la largeur dispo
+    max-width: 220px;         // limite la taille max
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-
     cursor: pointer;
-
+    margin: 0 auto;           // centre horizontalement
+  
     img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-
-        border-radius: 18px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 18px;
     }
-}
+  
+    .profil-card__footer {
+      margin-top: 1rem;
+  
+      h3 {
+        font-size: 1rem;
+      }
+  
+      p {
+        font-size: 0.875rem;
+        line-height: 1.2rem;
+      }
+    }
+  
+    /* Animation hover mobile-friendly */
+    @media screen and (max-width: 600px) {
+      max-width: 100%;         // full width sur petit écran
+      border-radius: 12px;
+  
+      .profil-card__footer {
+        h3 {
+          font-size: 0.95rem;
+        }
+  
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  

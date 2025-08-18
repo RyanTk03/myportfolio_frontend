@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion'
 
 import { images } from '../../../assets/images'
@@ -22,7 +21,7 @@ const Hero = () => {
                     <div className="app__hero__head__info__presentation">
                         <span className="p-text hand-wave">👋</span>
                         <div>
-                            <p className="p-text">Hello, I'm</p>
+                            <p className="p-text">Hello, I&apos;m</p>
                             <h1 className="head-text">Rayane</h1>
                         </div>
                     </div>
@@ -30,6 +29,7 @@ const Hero = () => {
                         <p className="p-text p-text--skill-tag">fullstack developper</p>
                         <p className="p-text p-text--skill-tag">software engineer</p>
                         <p className="p-text p-text--skill-tag">data analyst</p>
+                        <p className="p-text p-text--skill-tag">InfoSec</p>
                     </div>
                     <div className="app__hero__head__info__greeting">
                         <p className="p-text p-text--greeting">Welcome to my world</p>
