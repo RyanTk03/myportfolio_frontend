@@ -1,12 +1,12 @@
 .about-card {
-    width: 100%;              // prend toute la largeur dispo
-    max-width: 220px;         // limite la taille max
+    width: 100%;
+    max-width: 220px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     cursor: pointer;
-    margin: 0 auto;           // centre horizontalement
+    margin: 0 auto;
   
     img {
       width: 100%;
@@ -28,9 +28,8 @@
       }
     }
   
-    /* Animation hover mobile-friendly */
     @media screen and (max-width: 600px) {
-      max-width: 100%;         // full width sur petit écran
+      max-width: 100%;
       border-radius: 12px;
   
       .profil-card__footer {

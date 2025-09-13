@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
 import './aboutCard.scss';
 import AboutModal from '../aboutModal';
@@ -22,23 +22,19 @@ const defaultProps = {
     }
 };
 
-
 const AboutCard = ({ content } = defaultProps) => {
     const [showModal, setShowModal] = useState(false);
 
     return (
         <>
             <motion.div
+                initial={{ scale: 0.98 }}
                 whileInView={{
                     opacity: [0, 1],
-                    transition: {
-                        duration: 0.6
-                    }
+                    transition: { duration: 0.6 },
                 }}
-                whileHover={{
-                    scale: 1.1
-                }}
-                onClick={ () => setShowModal(true) }
+                whileHover={{ scale: 1.02 }}
+                onClick={() => setShowModal(true)}
                 className="about-card"
             >
                 <div className="about-card__img">
@@ -49,11 +45,18 @@ const AboutCard = ({ content } = defaultProps) => {
                     <p className="p-text">{content.overview}</p>
                 </div>
             </motion.div>
-            { showModal && <AboutModal content={content} handleDisplay={setShowModal} /> }
+
+            <AnimatePresence>
+                {showModal && (
+                    <AboutModal
+                        content={content}
+                        handleDisplay={setShowModal}
+                    />
+                )}
+            </AnimatePresence>
         </>
     );
 }
 
 AboutCard.propTypes = propTypes;
-
 export default AboutCard;

@@ -1,41 +1,51 @@
 .app__about {
-    position: relative;
+  position: relative;
+  width: 100%;
+  padding: 4rem 1rem; // respiration globale
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__headline {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: clamp(1.5rem, 2vw, 2.25rem);
+    font-weight: 600;
+  }
+
+  &__profil-cards {
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
     width: 100%;
-    gap: 2rem;
-  
-    &__headline {
-      color: var(--secondary-color);
-      text-align: center;
-      margin-bottom: 3rem;
+    max-width: 1000px;
+    margin-top: 5rem;
+
+    > * {
+      flex: 1 1 250px;
+      max-width: 300px;
+      min-width: 220px;
     }
-  
-    &__profil-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 2.5rem;
-  
-      /* Chaque card prend une largeur responsive */
+
+    @media screen and (max-width: 900px) {
+      gap: 1.25rem;
       > * {
-        flex: 1 1 200px;   // grow, shrink, basis
-        max-width: 220px;  // limite la taille max
-      }
-  
-      /* Sur mobile, full width */
-      @media screen and (max-width: 600px) {
-        gap: 1.5rem;
-        > * {
-          flex: 1 1 100%;   // prend toute la largeur dispo
-          max-width: 100%;
-        }
+        flex: 1 1 45%; // 2 par ligne
+        max-width: 100%;
       }
     }
-  }
-  .app__about__profil-cards {
+
     @media screen and (max-width: 600px) {
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      gap: 1rem;
+
+      > * {
+        flex: 1 1 100%;
+        max-width: 90%;
+      }
     }
   }
-    
+}
