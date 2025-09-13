@@ -125,7 +125,9 @@ const Works = () => {
                     </div>
                 </motion.div>
             ))}
-            </motion.div>{/* Modal */}
+            </motion.div>
+
+            {/* Modal */}
             {selectedWork && (
                 <WorkModal
                     work={{
